@@ -1,4 +1,4 @@
-
+"""
 def hanoi(n, a, b, c):
     if n == 1:
         print(a, '->', b)
@@ -6,9 +6,28 @@ def hanoi(n, a, b, c):
     hanoi(n - 1, a, c, b)  # b <-> c
     print(a, '->', b)
     hanoi(n-1, c, b, a)  # a <-> b , b <-> c
-
-
 hanoi(3, 1, 3, 2)
+"""
+
+
+def hanoi(n, start, middle, target):
+    if n == 1:
+        print(start, middle)
+        return
+    hanoi(n-1, start, target, middle)
+    print(start, middle)
+    hanoi(n-1, target, middle, start)
+
+
+n = int(input())
+
+cnt = 0
+for i in range(n):
+    cnt = cnt * 2 + 1
+
+print(cnt)
+hanoi(n, 1, 3, 2)
+
 
 # 전체 hanoi(3, 1, 3, 2) 호출시
 """
