@@ -8,6 +8,11 @@
 # b = list(set(a))
 # b.sort()
 # https://minorman.tistory.com/16
+"""
+sort() vs sorted()
+sorted() 함수는 정렬된 새로운 리스트를 리턴합니다. 반면에 sort() 함수는
+아무것도 리턴시켜주지 않습니다. (None를 리턴시켜줌)
+"""
 
 # ! 시간 초과
 # import sys
