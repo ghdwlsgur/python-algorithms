@@ -132,8 +132,50 @@
 #         exclude_area *= arr[i][1]
 # print((total_area - exclude_area) * n)
 
-import sys 
-n = int(sys.stdin.readline())
+# import sys
+# n = int(sys.stdin.readline())
+# arr = []
+# max_index_value = [(0, 0), (0, 0)]
+
+# for i in range(6):
+#     d, w = map(int, sys.stdin.readline().split())
+#     d = 0 if d <= 2 else 1
+#     if w > max_index_value[d][1]:
+#         max_index_value[d] = (i, w)
+#     arr.append((d, w))
+
+# total_area = max_index_value[0][1] * max_index_value[1][1]
+# check = [False] * 6
+
+# exclude_area = 1
+# for idx, _ in max_index_value:
+#     if not check[i]:
+#         exclude_area *= arr[i][1]
+# print((total_area - exclude_area) * n)
+
+# import sys
+# n = int(sys.stdin.readline())
+# arr = []
+# max_index_value = [(0, 0), (0, 0)]
+
+# for i in range(6):
+#     d, w = map(int, sys.stdin.readline().split())
+#     d = 0 if d <= 2 else 1
+#     if w > max_index_value[d][1]:
+#         max_index_value[d] = (i, w)
+#     arr.append((d, w))
+
+# total_area = max_index_value[0][1] * max_index_value[1][1]
+# check = [False] * 6
+
+# exclude_area = 1
+# for idx, _ in max_index_value:
+#     if not check[i]:
+#         exclude_area *= arr[i][1]
+# print((total_area - exclude_area) * n)
+
+import sys
+n = int(sys.stdin.readline().split())
 arr = []
 max_index_value = [(0, 0), (0, 0)]
 
@@ -147,8 +189,8 @@ for i in range(6):
 total_area = max_index_value[0][1] * max_index_value[1][1]
 check = [False] * 6
 
-exclude_area = 1 
+exclude_area = 1
 for idx, _ in max_index_value:
-  if not check[i]:
-    exclude_area *= arr[i][1]
+    if not check[i]:
+        exclude_area *= arr[i][1]
 print((total_area - exclude_area) * n)
