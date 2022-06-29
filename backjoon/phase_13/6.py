@@ -176,10 +176,10 @@
 #         print(cnt)
 
 
-from math import sqrt
-import sys
+# from math import sqrt
+# import sys
 
-n = int(sys.stdin.readline().rstrip())
+# n = int(sys.stdin.readline().rstrip())
 """
 첫 번째 조건: 두 원의 원점 사이의 거리가 동일하고 반지름이 같을 때 (완전히 겹칠 때)
 두 번째 조건: 
@@ -187,19 +187,18 @@ n = int(sys.stdin.readline().rstrip())
 - 두 원의 반지름의 합이 두 원의 원점 사이의 거리와 동일할 때 (외접)
 세 번째 조건:
 - 두 원의 원점 사이의 거리가 두 원의 반지름의 차이보다 크고 두 원의 반지름의 합보다 작을 때 (두 점으로 겹칠 때)
-
 """
-for _ in range(n):
-    x1, y1, r1, x2, y2, r2 = map(int, sys.stdin.readline().split())
-    distance = sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
-    if distance == 0 and r1 == r2:
-        print(-1)
-    elif abs(r1 - r2) == distance or r1 + r2 == distance:
-        print(1)
-    elif abs(r1 - r2) < distance < (r1 + r2):
-        print(2)
-    else:
-        print(0)
+# for _ in range(n):
+#     x1, y1, r1, x2, y2, r2 = map(int, sys.stdin.readline().split())
+#     distance = sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
+#     if distance == 0 and r1 == r2:
+#         print(-1)
+#     elif abs(r1 - r2) == distance or r1 + r2 == distance:
+#         print(1)
+#     elif abs(r1 - r2) < distance < (r1 + r2):
+#         print(2)
+#     else:
+#         print(0)
 
 
 # from math import sqrt
@@ -232,3 +231,36 @@ for _ in range(n):
 #         print(2)
 #     else:
 #         print(0)
+
+# from math import sqrt 
+# import sys 
+# n = int(sys.stdin.readline().rstrip())
+
+# for _ in range(n):
+#     x1, y1, r1, x2, y2, r2 = map(int, sys.stdin.readline().split())
+
+#     distance = sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
+#     if distance == 0 and r1 == r2:
+#         print(-1)
+#     elif abs(r1 - r2) == distance or r1 + r2 == distance:
+#         print(1)
+#     elif abs(r1 - r2) < distance < (r1 + r2):
+#         print(2)
+#     else:
+#         print(0)
+        
+from math import sqrt
+import sys 
+n = int(sys.stdin.readline().rstrip())
+
+for _ in range(n):
+    x1, y1, r1, x2, y2, r2 = map(int, sys.stdin.readline().split())
+    distance = sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)                                
+    if distance == 0 and r1 == r2:
+        print(-1)
+    elif abs(r1 - r2) == distance or r1 + r2 == distance:
+        print(1)
+    elif abs(r1 - r2) < distance < (r1 + r2):
+        print(2)
+    else:
+        print(0)
