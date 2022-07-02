@@ -1,36 +1,134 @@
+# from math import sqrt, gcd
+# import sys
+# from math import gcd, sqrt
+
+# n = int(sys.stdin.readline().rstrip())
+# input = sorted([int(sys.stdin.readline().rstrip()) for _ in range(n)])
+
+# l = []
+# for i in range(1, len(input)):
+#     l.append(abs(input[i] - input[i-1]))
+
+# target = l[0]
+# for i in range(1, len(input) - 1):
+#     target = gcd(target, l[i])
+
+
+# result = []
+# for i in range(1, int(sqrt(target)) + 1):
+#     if target % i == 0:
+#         if i ** 2 == target:
+#             result.append(i)
+#         else:
+#             result += [i, target // i]
+
+# result.remove(1)
+
+# for i in sorted(result):
+#     print(i, end=" ")
+
+
+# n = int(sys.stdin.readline().rstrip())
+# input = sorted([int(sys.stdin.readline().rstrip()) for _ in range(n)])
+
+# l = []
+# for i in range(1, len(input)):
+#     l.append(abs(input[i] - input[i-1]))
+
+# target = l[0]
+# for i in range(1, len(input)-1):
+#     target = gcd(target, l[1])
+
+# result = []
+# for i in range(1, int(sqrt(target)) + 1):
+#     if target % i == 0:
+#         if i ** 2 == target:
+#             result.append(i)
+#         else:
+#             result += [i, target // i]
+# result.remove(1)
+
+# for i in sorted(result):
+#     print(i, end=" ")
+
+
+# n = int(sys.stdin.readline().rstrip())
+# input = sorted([int(sys.stdin.readline().rstrip())] for _ in range(n))
+
+# l = []
+# for i in range(1, len(input)):
+#     l.append(abs(input[i] - input[i-1]))
+
+# target = l[0]
+# for i in range(1, len(input)-1):
+#     target = gcd(target, l[i])
+
+# result = []
+# for i in range(1, int(sqrt(target)) + 1):
+#     if target % i == 0:
+#         if i ** 2 == target:
+#             result.append(i)
+#         else:
+#             result += [i, target // i]
+# result.remove(1)
+
+# for i in sorted(result):
+#     print(i, end=" ")
+
+
+# import sys
+# from math import sqrt, gcd
+# n = int(sys.stdin.readline().rstrip())
+# input = [int(sys.stdin.readline().rstrip()) for _ in range(n)]
+
+# l = []
+# # 입력받은 수의 차이를 구한다.
+# for i in range(1, len(input)):
+#     l.append(abs(input[i] - input[i - 1]))
+
+# target = l[0]
+# # 값들의 최대공약수를 구한다.
+# for i in range(1, len(input) - 1):
+#     target = gcd(target, l[i])
+
+# result = []
+# # 최대공약수의 제곱근까지를 벙뮈로 하여 약수를 추출한다.
+# for i in range(1, int(sqrt(target)) + 1):
+#     if target % i == 0:
+#         if i ** 2 == target:
+#             result.append(i)
+#         else:
+#             result += [i, target // i]
+# result.remove(1)
+
+# for i in result:
+#     print(i, end=" ")
+
+
 import sys
-
-
-def gcd(a, b):
-    while(b):
-        a, b = b, b % a
-    return a
-
+from math import sqrt, gcd
 
 n = int(sys.stdin.readline().rstrip())
-
+input = [int(sys.stdin.readline().rstrip()) for _ in range(n)]
 l = []
-for _ in range(n):
-    num = int(sys.stdin.readline().rstrip())
-    l.append(num)
+# 입력받은 수의 차이를 구한다.
+for i in range(1, len(input)):
+    l.append(input[i] - input[i - 1])
 
-if n == 2:
-    if max(l[0], l[1]) % min(l[0], l[1]) == 0:
-        print(min(l[0], l[1]))
-else:
-    gcd_l = []
-    for i in range(0, n):
-        for j in range(i+1, n):
-            gcd_l.append(gcd(l[i], l[j]))
+target = l[0]
+# 값들의 최대공약수를 구한다.
+for i in range(1, len(input) - 1):
+    target = gcd(target, l[i])
 
-    gcd_l = list(set(gcd_l))
-    print(gcd_l)
+result = []
+# 최대공약수의 제곱근까지를 벙뮈로 하여 약수를 추출한다.
+for i in range(1, int(sqrt(target)) + 1):
+    if target % i == 0:
+        if i ** 2 == target:
+            result.append(i)
+        else:
+            result += [i, target // i]
+result.remove(1)
 
-    for i in gcd_l:
-        cnt = 0
-        if i != 1:
-            for j in range(0, n):
-                if l[0] % i == l[j] % i:
-                    cnt += 1
-            if cnt == n:
-                print(i, end=" ")
+for i in sorted(result):
+    print(i, end=" ")
