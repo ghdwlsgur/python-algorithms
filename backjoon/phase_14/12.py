@@ -73,6 +73,23 @@
 #   countNum(a, 2) - countNum(b, 2) - countNum(a-b, 2)))
 
 
+# import sys
+# a, b = map(int, sys.stdin.readline().split())
+
+
+# def count_number(n, k):
+#     count = 0
+#     while n:
+#         n //= k
+#         count += n
+#     return count
+
+
+# five_count = count_number(a, 5) - count_number(b, 5) - count_number(a-b, 5)
+# two_count = count_number(a, 2) - count_number(b, 2) - count_number(a-b, 2)
+# print(min(five_count, two_count))
+
+
 import sys
 a, b = map(int, sys.stdin.readline().split())
 
@@ -85,8 +102,6 @@ def count_number(n, k):
     return count
 
 
-print(count_number(a, 2))
-# five_count = count_number(a, 5) - count_number(b, 5) - count_number(a - b, 5)
-# two_count = count_number(a, 2) - count_number(b, 2) - count_number(a - b, 2)
-
-# print(min(five_count, two_count))
+five_count = count_number(a, 5) - count_number(b, 5) - count_number(a-b, 5)
+two_count = count_number(a, 2) - count_number(b, 2) - count_number(a-b, 2)
+print(min(five_count, two_count))
