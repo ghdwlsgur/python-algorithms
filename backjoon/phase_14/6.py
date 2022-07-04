@@ -37,9 +37,24 @@
 #     else:
 #         print(Fraction(t, l[i]))
 
+
+# import sys
+# from fractions import Fraction 
+# n = int(sys.stdin.readline().rstrip())
+# l = list(map(int, sys.stdin.readline().split()))
+
+
+# t = l[0]
+# for i in range(1, len(l)):
+#     if t % l[i] == 0:
+#         print(f'{int(t // l[i])}/1')
+#     else:
+#         print(Fraction(t, l[i]))
+        
+        
 import sys 
 from fractions import Fraction
-n = int(sys.stdin.readline().rstript())
+n = int(sys.stdin.readline().rstrip())
 l = list(map(int, sys.stdin.readline().split()))
 
 t = l[0]
@@ -48,3 +63,4 @@ for i in range(1, len(l)):
         print(f'{int(t // l[i])}/1')
     else:
         print(Fraction(t, l[i]))
+
