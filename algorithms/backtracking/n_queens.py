@@ -40,5 +40,5 @@ def printboard(board: List[List[int]]) -> None:
 
 n = 8
 board = [[0 for i in range(n)] for j in range(n)]
-solve(board, 0)
+solve(board, 100)
 print("The total no. of solutions are: ", len(solution))
