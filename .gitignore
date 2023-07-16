@@ -1,1 +1,7 @@
-.DB_STORE
+.DB_Store
+misc.xml
+modules.xml
+profiles_settings.xml
+python-algorithms.iml
+vcs.xml
+.idea
